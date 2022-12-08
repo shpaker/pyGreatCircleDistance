@@ -1,5 +1,5 @@
 [tool.poetry]
-name = "pygreatcircledistance"
+name = "pyGreatCircleDistance"
 version = "0.1.0"
 description = "Calculate the distance between two GPS coordinates in meters"
 authors = ["Aleksandr Shpak <shpaker@gmail.com>"]
