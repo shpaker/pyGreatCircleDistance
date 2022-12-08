@@ -1,3 +1,0 @@
-"""
-ROBOT FRAMEWORK KEYWORDS
-"""
