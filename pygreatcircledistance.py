@@ -17,6 +17,15 @@ _EARTH_RADIUS = 6372795  # meters
 def _coords_to_radians(
     coords: Tuple[float, float],
 ) -> Tuple[float, float]:
+    """
+    Convert coordinates from degrees to radians.
+
+    Args:
+        coords (Tuple[float, float]): A tuple containing latitude and longitude in degrees.
+
+    Returns:
+        Tuple[float, float]: A tuple containing latitude and longitude in radians.
+    """
     return radians(coords[0]), radians(coords[1])
 
 
@@ -24,6 +33,19 @@ def haversine_formula(
     from_coords: Tuple[float, float],
     to_coords: Tuple[float, float],
 ) -> float:
+    """
+    Calculate the great-circle distance between two points on the Earth's surface using the Haversine formula.
+    
+    The Haversine formula is an equation that can be used to find the distance between two points on the surface of a sphere given their longitudes and latitudes.
+    More information: https://en.wikipedia.org/wiki/Haversine_formula
+
+    Args:
+        from_coords (Tuple[float, float]): A tuple containing the latitude and longitude of the starting point in degrees.
+        to_coords (Tuple[float, float]): A tuple containing the latitude and longitude of the destination point in degrees.
+
+    Returns:
+        float: The distance between the two points in meters.
+    """
     from_radians = _coords_to_radians(from_coords)
     to_radians = _coords_to_radians(to_coords)
 
@@ -45,6 +67,19 @@ def spherical_law_of_cosines_formula(
     from_coords: Tuple[float, float],
     to_coords: Tuple[float, float],
 ) -> float:
+    """
+    Calculate the great-circle distance between two points on the Earth's surface using the Spherical Law of Cosines formula.
+    
+    The Spherical Law of Cosines is a theorem in spherical trigonometry that relates the sides and angles of spherical triangles.
+    More information: https://en.wikipedia.org/wiki/Spherical_law_of_cosines
+
+    Args:
+        from_coords (Tuple[float, float]): A tuple containing the latitude and longitude of the starting point in degrees.
+        to_coords (Tuple[float, float]): A tuple containing the latitude and longitude of the destination point in degrees.
+
+    Returns:
+        float: The distance between the two points in meters.
+    """
     from_radians = _coords_to_radians(from_coords)
     to_radians = _coords_to_radians(to_coords)
 
@@ -64,6 +99,19 @@ def vincenty_formula(
     from_coords: Tuple[float, float],
     to_coords: Tuple[float, float],
 ) -> float:
+    """
+    Calculate the great-circle distance between two points on the Earth's surface using Vincenty's formula.
+    
+    Vincenty's formulae are two related iterative methods used in geodesy to calculate the distance between two points on the surface of a spheroid.
+    More information: https://en.wikipedia.org/wiki/Vincenty%27s_formulae
+
+    Args:
+        from_coords (Tuple[float, float]): A tuple containing the latitude and longitude of the starting point in degrees.
+        to_coords (Tuple[float, float]): A tuple containing the latitude and longitude of the destination point in degrees.
+
+    Returns:
+        float: The distance between the two points in meters.
+    """
     from_radians = _coords_to_radians(from_coords)
     to_radians = _coords_to_radians(to_coords)
 
